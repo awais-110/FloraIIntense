@@ -72,4 +72,57 @@ lib/products.ts
 ```
 
 Update each product's `image` field with the client's real image URL.
-# FloraIIntense
+
+
+## Hero Slider
+
+- Hero section now has an auto image slider.
+- Images change every 2 seconds.
+- Smooth fade/zoom transition included.
+- Slider dots are clickable.
+
+
+## Product Preview + Detail Page
+
+- Product image click opens quick view modal.
+- Eye icon opens quick view modal.
+- Product title and Details link open `/product/[id]`.
+- Product detail page includes image, notes, price, add to cart, WhatsApp order and related products.
+
+## Supabase Admin Dashboard Added
+
+Admin URL:
+
+```text
+/admin/login
+```
+
+Admin can manage:
+
+- Products
+- Product images
+- Price / old price
+- Stock
+- Discount label
+- Product active/hidden
+- Hero banner slider images
+- Banner title/subtitle/button
+
+Setup instructions are in:
+
+```text
+README_ADMIN_SETUP.md
+supabase/admin-schema.sql
+```
+
+Important environment variables:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+NEXT_PUBLIC_WHATSAPP_NUMBER=
+NEXT_PUBLIC_SITE_URL=
+ADMIN_PASSWORD=
+ADMIN_SESSION_SECRET=
+```

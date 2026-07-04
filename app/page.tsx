@@ -11,19 +11,19 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import { ShopProvider } from "@/components/ShopProvider";
-import { getProducts } from "@/lib/supabase";
+import { getHeroSlides, getProducts } from "@/lib/supabase";
 
 export default async function Home() {
-  const products = await getProducts();
+  const [products, heroSlides] = await Promise.all([getProducts(), getHeroSlides()]);
 
   return (
     <ShopProvider>
       <Header />
       <main>
-        <Hero />
+        <Hero slides={heroSlides} />
         <Countdown />
         <CollectionTiles />
-        {/* <BrandStory /> */}
+        <BrandStory />
         <ProductSections products={products} />
         <Reviews />
         <ContactForm />
